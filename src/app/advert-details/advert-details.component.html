@@ -1,0 +1,35 @@
+<img src="https://loremflickr.com/640/320/car">
+<h3>{{ advert.title }}</h3>
+<mat-card class="advert__card" *ngIf="advert">
+    <mat-tab-group>
+        <mat-tab label="Advert details">
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile>
+                    <strong>Price: </strong> ${{advert.price}}
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Description: </strong> {{advert.description}}
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-tab>
+        <mat-tab label="Car details">
+            <mat-grid-list cols="6" rowHeight="2:1">
+                <mat-grid-tile>
+                    <strong>Engine size: </strong> {{advert.engineSize}}cm3
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Fuel type: </strong> {{advert.fuelType}}
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Status: </strong> {{advert.isNew ? 'New' : 'Used'}}
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Mileage: </strong> {{advert.mileage}}
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Broken?: </strong> {{advert.isBroken ? 'Broken' : 'Not broken'}}
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

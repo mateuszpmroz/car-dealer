@@ -1,0 +1,25 @@
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let advert of adverts">
+        <mat-card class="advert__card">
+            <img src="https://loremflickr.com/320/240/car">
+            <mat-divider></mat-divider>
+            <h3><a style="color:black" [routerLink]="['/advert',advert.id]">
+                {{ advert.title }}</a></h3>
+            <h4>Cena: ${{advert.price}}</h4>
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile>
+                    <strong>Engine size: </strong> {{advert.engineSize}}cm3
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Fuel type: </strong> {{advert.fuelType}}
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Status: </strong> {{advert.isNew ? 'New' : 'Used'}}
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <strong>Mileage: </strong> {{advert.mileage}}
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,28 @@
+<h1>
+    Registration form
+</h1>
+<form [formGroup]="userData" (ngSubmit)="onSubmit()">
+        <p>
+            <mat-form-field>
+                <input matInput required placeholder="Login" name="login" id="login" formControlName="login">
+            </mat-form-field>
+        <br>
+            <mat-form-field>
+                <input matInput required placeholder="Password" type="password" name="password" id="password" formControlName="password">
+            </mat-form-field>
+        <br>
+            <mat-form-field>
+                <input matInput required placeholder="Email" name="email" id="email" formControlName="email">
+            </mat-form-field>
+        <br>
+            <mat-form-field>
+                <input matInput required placeholder="Phone number" name="phoneNumber" id="phoneNumber" formControlName="phoneNumber">
+            </mat-form-field>
+        <br>
+            <mat-form-field>
+                <input matInput required placeholder="First Name" name="firstName" id="firstName" formControlName="firstName">
+            </mat-form-field>
+        <br>
+            <button [disabled]="!userData.valid" type="submit" mat-button>Register</button>
+        </p>
+</form>

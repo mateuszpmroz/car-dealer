@@ -1,0 +1,16 @@
+<mat-toolbar color="accent">
+    <mat-toolbar-row>
+        <a *ngIf="!isUserLogged" routerLink="/login">
+            <button mat-button>Login</button>
+        </a>
+        <a *ngIf="!isUserLogged" routerLink="/register">
+            <button mat-button>Register</button>
+        </a>
+        <a routerLink="/adverts">
+            <button mat-button>Adverts</button>
+        </a>
+        <a class="logout__button" *ngIf="isUserLogged" (click)="logout()" routerLink="/login">
+            <button mat-button>Logout</button>
+        </a>
+    </mat-toolbar-row>
+</mat-toolbar>
